@@ -1,0 +1,32 @@
+.container
+  .row
+    .col-lg-offset-2.col-lg-8.sign-in
+      %img.sign-in-image.center-block{:alt => "Firs+Aid Logo", :src => "/assets/logo-tagline-712029fa759a9065f629c28253e5552ce5d184e157d96ba0efe3191d3449c447.svg"}/
+      %h2.text-center Log in
+      .col-lg-5.regular-login
+        = form_for(resource, as: resource_name, url: session_path(resource_name), class: 'form') do |f|
+          .form-group
+            = f.label :email
+            = f.email_field :email, autofocus: true, class: 'form-control'
+          .form-group
+            = f.label :password
+            %br/
+            = f.password_field :password, autocomplete: "off", class: 'form-control'
+          - if devise_mapping.rememberable?
+            .checkbox
+              %label{:for => "remember_me"}
+                %input{:name => "user[remember_me] value=", :type => "hidden"}>/
+                0" "&gt;
+                %input#user_remember_me.checkbox{:name => "user[remember_me]", :type => "checkbox", :value => "1"}
+                  Remember Me
+            .text-center
+              = f.submit Log In, class: 'btn btn-success', id: 'sign-in-button'
+        .col-lg-2.login-separator.text-center
+          %h1 or
+        .col-lg-5.facebook-login.text-center
+          %a{:href => "/users/auth/facebook"}
+            %button.btn.btn-primary.login
+              %i.fa.fa-facebook>
+              Login with Facebook
+        .col-lg-12.links
+          = render users/shared/links

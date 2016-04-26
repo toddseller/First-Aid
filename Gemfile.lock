@@ -349,6 +349,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  json
   letter_opener
   omniauth-facebook
   pg

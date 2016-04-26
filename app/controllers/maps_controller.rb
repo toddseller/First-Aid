@@ -1,3 +1,5 @@
+require 'json'
+
 class MapsController < ApplicationController
   def index
         @charities = Charity.all

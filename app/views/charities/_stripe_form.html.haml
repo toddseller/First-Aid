@@ -2,5 +2,5 @@
   .input-group
     %input#custom-donation.form-control{:min => "1.00", :placeholder => "10.00", :step => "10.00 ", :type => "number", name: 'donation_amount'}
     .input-group-btn
-      %script.stripe-button{"data-amount" => "", "data-description" => "Help The Cause!", "data-label" => "Donate Now", "data-key" => "pk_test_LK6MXgLNu6grGnpLVDbXSgcu", "data-locale" => "auto", "data-panel-label" => "Donate", "data-name" => "Donate to #{@charity.title}", :src => "https://checkout.stripe.com/checkout.js"}
+      %script.stripe-button{"data-amount" => "", "data-description" => "Help The Cause!", "data-label" => "Donate Now", "data-key" => "pk_test_LK6MXgLNu6grGnpLVDbXSgcu", "data-locale" => "auto", "data-panel-label" => "Donate", "data-name" => "Donate to #{@charity.title}", "data-image" => "/assets/stripe-logo-41ddefd440f9c5627c298b2a14d1f7bcec5e1ca53ec2c22ce0a0f06fa6bc9097.png", :src => "https://checkout.stripe.com/checkout.js"}
 

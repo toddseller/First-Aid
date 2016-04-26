@@ -28,9 +28,9 @@
                 = "Signed in as #{current_user.full_name}"
                 = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-success navbar-btn btn-one logout'
 
+      %script{:src => "https://bl.ocks.org/mbostock/raw/4090846/us.json"}
       %script{:src => "https://d3js.org/d3.v3.min.js"}
       %script{:src => "https://d3js.org/topojson.v1.min.js"}
-      %script{:src => "https://bl.ocks.org/mbostock/raw/4090846/us.json"}
       %script{:src => "https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"}
       %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js"}
       %script{:src => "https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"}

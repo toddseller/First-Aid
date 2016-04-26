@@ -18,4 +18,5 @@ class FirstaidMailer < ApplicationMailer
     @charity = charity
     @amount = amount
     mail(to: "#{@user.full_name} <#{@user.email}>", subject: 'Thank You for Donating')
+  end
 end

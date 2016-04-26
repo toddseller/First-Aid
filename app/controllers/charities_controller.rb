@@ -41,6 +41,10 @@ class CharitiesController < ApplicationController
 
   # POST from charity donation form
   def stripe_charge
+    @user.id = current_user.id
+    @charity.id = params[:id]
+    @amount = params[:donation_amount]
+
     donation = Donation.create(user_id: current_user.id, disaster_id: params[:disaster_id], charity_id: params[:id], amount: params[:donation_amount])
 
       Stripe.api_key = ENV['STRIPE_SECRET']
@@ -58,6 +62,7 @@ class CharitiesController < ApplicationController
           :customer => customer.id
         )
         flash[:good] = "Thanks for donating!"
+        DonationWorker.perform_async(@user.id, @charity.id, @amount)
       rescue Stripe::CardError => e
         flash[:problem] = e.message
       end

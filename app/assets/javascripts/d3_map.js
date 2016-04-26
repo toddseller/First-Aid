@@ -30,7 +30,7 @@ d3.select(window).on("resize", mapSizeChange);
       centered;
 
   // This is the map
-  d3.json("/assets/us.json", function(error, us) {
+  d3.json("/assets/us-a2afcc7d320462eb71f882666b2a6cfb59bcb7134f199bb130bcf4e491ee46e0.json", function(error, us) {
     if (error) throw error;
 
     g.append("g")

@@ -14,7 +14,7 @@ d3.select(window).on("resize", mapSizeChange);
               .append("g")
 
   // This creates a responsive size for the map
-  d3.select("g").attr("transform", "scale(" + $(".map-body").width()/850 + ")");
+  d3.select("g").attr("transform", "scale(" + $(".map-body").width()/900 + ")");
       $("svg").height($(".map-body").width()*0.618);
 
   svg.append("rect")
@@ -66,9 +66,9 @@ d3.select(window).on("resize", mapSizeChange);
       k = 3; //change zoom with if statement
       centered = d;
     } else {
-      x = 850/2;
+      x = 900/2;
       y =  500/2;
-      k = $(".map-body").width()/850 ;
+      k = $(".map-body").width()/900 ;
       centered ;
     }// close if statement
 

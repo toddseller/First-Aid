@@ -417,6 +417,9 @@ li.tg-list-item {
   .charity-wrapper {
     width: 100% !important;
   }
+  .map-body {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 768px) {

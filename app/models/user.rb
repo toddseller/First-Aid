@@ -52,12 +52,12 @@ class User < ActiveRecord::Base
 
   def lng_lat
     if self.street_address
-      address = self.street_address.gsub(/\s/, '+')
+      p address = self.street_address.gsub(/\s/, '+')
       city = self.city.gsub(/\s/, '+')
       state = self.state
-      uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{address},#{city},#{state}&key=#{ENV['PLACE']}")
-      @location = Net::HTTP.get_response(uri)
-      @json = JSON.parse(@location.body)
+      uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{address},+#{city},+#{state}&key=#{ENV['PLACE']}")
+      p @location = Net::HTTP.get_response(uri)
+      p @json = JSON.parse(@location.body)
       self.latitude = @json['results'][0]['geometry']['location']['lat']
       self.longitude = @json['results'][0]['geometry']['location']['lng']
     end
